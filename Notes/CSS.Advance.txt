@@ -1,0 +1,3 @@
+Advance CSS:
+------------
+-Using z-index for placing the image or text in the side of wher ever you want, it must be absolue positioned.

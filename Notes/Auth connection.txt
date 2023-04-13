@@ -1,0 +1,130 @@
+Register.html:
+-------------
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--------------------------------Bootstrap 4 ------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--------------------------------cryptojs cdn file---------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Sign up</title>
+</head>
+<body>
+    
+       <div class="mb-5">
+        <h2 class="mb-3">Sign Up</h2>
+        <input type="text" placeholder="Enter Your FullName" id="nameInp" class="form-control mb-3">
+        <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
+        <input type="phone" placeholder="Phone Number" id="phoneInp" class="form-control mb-3">
+        <input type="password" placeholder="password" id="passwordInp" class="form-control mb-3">
+        <input type="password" placeholder="Re-Enter password" id="password2Inp" class="form-control mb-3">
+        <button type="text" id="sub_btn" class="btn btn-outline-primary w-100 mb-3" onclick="validation()">Sign Up</button>
+        <a href="./Login.html" class="badge badge-secondary py-1 w-100">Already Have An Account ?</a>
+       </div>
+    
+       <script src="./Register.js"></script>
+</body>
+</html>
+
+
+Register.js
+------------
+
+
+// Import the functions you need from the SDKs you need
+  //----------------------------------Firebase Config --------------------------------------------//
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAxtiHP_syLaCBVz8v5DBVUFC94GdLwg48",
+    authDomain: "auth-tw-48b1d.firebaseapp.com",
+    databaseURL: "https://auth-tw-48b1d-default-rtdb.firebaseio.com",
+    projectId: "auth-tw-48b1d",
+    storageBucket: "auth-tw-48b1d.appspot.com",
+    messagingSenderId: "644042001431",
+    appId: "1:644042001431:web:3cd4bef43f8b6b3872a052"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  import {getDatabase, ref, set, child, get}
+      from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
+      const db = getDatabase();
+
+
+//----------------------------------The Reference-----------------------------------------------------------
+
+   const name = document.getElementById("nameInp").value;
+   const email = document.getElementById("emailInp").value;
+   const phone = document.getElementById("phoneInp").value;
+   const password = document.getElementById("passwordInp").value;
+   const password2 = document.getElementById("password2Inp").value;
+   const submit = document.getElementById("sub_btn");
+
+//-------------------------------------Validation ----------------------------------------------------------
+
+       function validation(){
+        let nameregex = /^[a-zA-Z\s]+$/;
+        let email = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+        let phone = /^\d{10}$/;
+        let password = /^[A-Za-z]\w{7,14}$/;
+
+          if(!nameregex.test(name)){
+            alert("The name should only contain alphabets");
+            return false;
+          }
+          if(!email.test(email)){
+            alert("Enter a valid mail");
+            return false;
+          }
+          if(!phone.test(phone)){
+            alert("The phone number should only contain Digits");
+            return false;
+          }
+           return true;
+       }
+
+//----------------------------Register user to Firebase-------------------------------------------------------
+
+    function RegisterUser(){
+        if(!validation()){
+               return;
+        };
+        const dbRef = ref(db);
+
+        get(child(dbRef, "UserList/"+email.value)).then((snapshot)=> {
+            if(snapshot.exists()){
+                alert("Account already Exist!");
+            }
+            else{
+                set(ref(db, "UserList/"+email.value),
+                {
+                      fullname: name.value,
+                      email: email.value,
+                      phone: phone.value,
+                      password: password.value,
+                      password2: password2.value
+                })
+                .then(() => {
+                    alert("User add successfully");
+                })
+                .catch((error) => {
+                    alert("error"+error);
+                })
+            }
+        });
+    }
+//--------------------------------Assign the Event---------------------------------------------------------
+
+         submit.addEventListener('click', RegisterUser);
+
+   

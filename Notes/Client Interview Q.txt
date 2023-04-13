@@ -1,0 +1,32 @@
+Interview Questions:
+-------------------
+-Intro
+-from 45 what you have done, please expolre the things with detail
+-what is grid & Explain
+-what is flex box & explain
+-what is Box model & explain
+-Difference between Margin & Padding
+-what are the background properties in CSS 
+-what is the default CSS property
+-what are the Virtual DOM & shadow DOM
+-explain DOM and where we have to use
+-explain BOM and uses
+-Differece between Virtual DOM & shadow DOM
+-what are the callback functions in JS
+-what is Web API
+-by using Nodejs what we can acheive instead of not acheiving through JS
+-How to create the Server
+-DB connection to the node server
+-Explain API calling
+-Explaing Express.js Routing
+-for 2days what you have learnt in React and explain with brief
+-Limitations of React
+-Without using JSX we can use the components
+-Use of JSX
+-Expain how to use props?
+-props handling?
+-What are the components in React
+-when should the virtaul DOM takes place in React
+-What is Hook
+-what is the use of Usestate
+

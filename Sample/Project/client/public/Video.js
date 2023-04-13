@@ -1,0 +1,1 @@
+const video_address = '.C:\Users\Office\Desktop\Project\client\public\200705_03_Work_Life_4k_025.mp4'

@@ -1,0 +1,69 @@
+Connect FrontEnd(React) to Backend(Node):
+----------------------------------------
+-create folder called "client" for frontend
+-create server folder for backend purpose
+-go to server folder and create package.json in the node using  npm init -y 
+-change the main key to server.js in package.json
+-create the server.js file just before mentioned
+-install exress using npm i express
+-install nodemon for making application restarts itself without manually do using npm i nodemon -D
+-change the script to 
+"start": "node server",
+"dev": "nodemon server" in package.json file
+-create react app using npx create-react-app client
+-create the Experess server by using
+
+const express = require('express');
+const app = express();
+
+app.get('/api', (req, res) => {
+      res.json({"users": ["userOne", "useTwo", "userThree"] })
+})
+
+app.listen(5000, () => {
+    console.log("server runningi on port 5000");
+    
+})
+
+
+-run express server by using this "npm run dev"
+-open the localhost:5000 port and see the server is running.
+-Express to React so Fetch the API 
+put this "proxy":"http://localhost:5000", in package.json file
+
+-you can give the Frontend in the React application means App.js
+import React, { useEffect, useState } from 'react'
+
+function App() {
+
+const [backendData, setBackendData] = useState([{}])
+
+
+useEffect(() => {
+  fetch("/api").then(
+    response => response.json()
+  ).then (
+    data =>  {
+      setBackendData(data)
+    }
+  )
+},  [])
+
+  return (
+    <div>
+       {(typeof backendData.users === 'undefined') ? (
+        <p>Loading...</p>
+       ) : (
+        backendData.users.map((user, i) => {
+          <p key={i}>{user}</p>
+        })
+       )}
+    </div>
+  );
+}
+
+export default App;
+
+
+-now the backend data will be coming to frontend usingn fetching API.
+

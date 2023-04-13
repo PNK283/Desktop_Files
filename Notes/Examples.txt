@@ -1,0 +1,43 @@
+
+
+While Loop:
+-----------
+while (i<=5){  
+        println(i)  
+        i++  
+    }  
+
+output:
+------
+1
+2
+3
+4
+5
+
+
+while(true)
+{
+println("Hello")
+}
+
+o/p:
+----
+Hello
+Hello
+.
+.
+.
+Hello 
+
+- it will print infinite times because we doesn't provide condtion for where the statement should stop
+
+
+For Loop
+--------
+
+fun main(args:Array<String>){  
+      var marks=arrayOf(90,95,85,80);
+       for(item in marks)
+           println(item)
+}

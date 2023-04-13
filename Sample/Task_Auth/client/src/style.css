@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+}
+.title{
+    display: flex;
+    float: left;
+}
+.signup_btn{
+    margin-right: 100pc;
+}
+.bg-image{
+    width: 100%;
+    position: relative;
+}
+.bg-text-header{
+    position: absolute;
+    bottom: 120px;
+    left: 100px;
+    top: 8rem;
+    display: flex;
+}

@@ -1,0 +1,33 @@
+.container-numbers{
+    float: right;
+    box-sizing: border-box;
+    width: 200px;
+    border-style: groove;
+    padding: 0;
+}
+.text_container{
+    box-sizing: border-box;
+    width: 800px;
+    border: 10px;
+    border-style: groove;
+    padding: 5px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 100px;
+    height: 400px;
+}
+.footer{
+    position: fixed;
+    padding: 50px 20px 10px 10px;
+    bottom: 0;
+    margin-left: 700px;
+    margin-bottom: 100px;
+}
+#text_container_btn{
+    float: right;
+    margin-top: 230px;
+    margin-right: 350px;
+}
+#footer_pre_btn{
+     margin-right: 30px;
+}

@@ -1,0 +1,26 @@
+Connect to mysql database using nodejs
+--------------------------------------
+-Create nodejs folder
+-hit the command node init -y for creating packge.json file
+-install mysql in your nodejs folder hit the command npm install mysql
+
+
+
+
+
+const {createPool} = require('mysql')
+
+const pool = createPool({
+     host: "localhost",
+     user: "root",
+     password: "",
+     database : "test",
+     ConnectionLimit : 10
+});
+pool.query('select * from db',(err, result, fields) => {
+
+    if(err) {
+        return console.log(err);
+    }
+    return console.log(result);
+})

@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+nav{
+  padding: 20px;
+  height: 40px;
+
+}
+nav a{
+  margin-right: 30px;
+  margin: 40px;
+  font-size: 18px;
+  color: black;
+  border-radius: 50px;
+}
+nav a.active:hover{
+  font-weight: bold;
+  text-decoration: none; 
+  color: brown;
+  border-bottom-style: ridge;
+}
+nav a:link{
+  text-decoration: none;
+}
+nav.pointer{
+  cursor: pointer;
+  background-color: blue;
+}
+nav a:hover{
+  color: black;
+  font-weight: bold;
+  border-bottom-style: ridge;
+}
+.container_BG{
+  width: 20px;
+  height: 20px;
+}
+/*
+body{
+  background-image: url("https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?cs=srgb&dl=pexels-pixabay-301920.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}*/
+nav :hover{
+  background-color: yellow
+}
+App:hover{
+       background-color: white;
+}
+.container_search{
+  float: left;
+  margin: 50px;
+  border-width: 100px;
+}

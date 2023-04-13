@@ -1,0 +1,78 @@
+body {
+    background-color:white;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  li {
+    float: left;
+  }
+  li a{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: lightgreen;
+    border-bottom: 3px solid red;
+  }
+  .navbar {
+    border-color: black;
+  }
+  .image_home {
+    width: 100px;
+    height: 50px;
+  }
+  .head1 {
+    margin-bottom: 140px;
+    margin: 15px; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    color: #FF0000	;
+    float: right;
+  }
+  .head2 {
+    margin-bottom: 140px;
+    margin: 15px; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    color: #00BFFF;
+    float: right;
+    
+  }
+  .topnav-right {
+    float: right;
+    
+
+  }
+  .img_1 {
+    margin: 0px;
+    padding: 0px;
+    width: 1319px;
+    height: 500px;
+    display: flex;
+    
+    position: absolute;
+  } 
+  
+  .h-container {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+  }
+  .Sign_in-options{
+    float: left;
+    position: relative;
+  }
+  .tutor {
+    margin-left: 100px;
+  }
